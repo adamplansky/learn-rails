@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(secure_param)
     Rails.logger.debug "DEBUG: #{@contact.name}"
     if @contact.valid?
-      #TODO save data
+      @contact.update_spreadsheet
       #TODO send message
       
       flash[:notice] = "Message sent from #{@contact.name}"
