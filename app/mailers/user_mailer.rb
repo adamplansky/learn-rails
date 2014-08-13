@@ -3,8 +3,8 @@ class UserMailer < ActionMailer::Base
   
   def contact_email(contact)
     @contact = contact
-    puts Rails.application.secrets.owner_email
-    puts @contact.email
+    puts "DEBUG: Rails.application.secrets.owner_email: #{Rails.application.secrets.owner_email}"
+    puts "DEBUG: @contact.email #{@contact.email}"
     mail(to: Rails.application.secrets.owner_email, from: @contact.email, :subject => "Website Contact")
     
   end
